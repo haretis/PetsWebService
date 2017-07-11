@@ -1,0 +1,30 @@
+﻿@using PetsWebService.ViewModel;
+
+@model List<PetDetails>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <table>
+        @foreach (var element in Model)
+        {
+            <tr>
+                <td>
+                    <b>  @element.gender.ToUpper() </b>
+                    <table>
+                        @foreach (var petname in @element.pets)
+                        {
+                            <tr>
+                                <td colspan="5"></td>
+                                <td>
+                                    @petname.ToString()
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
