@@ -7,9 +7,9 @@ namespace PetsWebService.Common.Model
 {
     public class People
     {
-        public string name { get; set; }
-        public string gender { get; set; }
-        public int age { get; set; }
-        public List<Pet> pets { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
+        public List<Pet> Pets { get; set; }
     }
 }

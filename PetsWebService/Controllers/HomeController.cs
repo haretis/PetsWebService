@@ -25,20 +25,21 @@ namespace PetsWebService.Controllers
         public async Task<ActionResult> Index()
         {
             string url = ConfigurationManager.AppSettings["Url"];
-            string filterBy = ConfigurationManager.AppSettings["FilterBy"];            
+            string filterBy = ConfigurationManager.AppSettings["FilterBy"];
+
             List<People> ownersPetList = await this.svc.GetownersPetList(url);
 
             List<PetDetails> resFilteredOwnerPetDetails = (from owner in ownersPetList
-                                       where owner.pets != null
-                                       from pet in owner.pets
-                                       where pet.type.ToUpper() == filterBy
-                                       orderby pet.name
-                                       select new
-                                       {
-                                           gender = owner.gender,
-                                           petname = pet.name
-                                       }).GroupBy(g => g.gender).Select(t => new PetDetails { gender = t.Key, pets = t.Select(p => p.petname).ToList() }).ToList();
-
+                    where owner.Pets != null
+                    from pet in owner.Pets
+                    where pet.Type.ToUpper() == filterBy
+                    orderby pet.Name
+                    select new
+                    {
+                        gender = owner.Gender,
+                        petname = pet.Name
+                    }).GroupBy(g => g.gender).Select(t => new PetDetails { gender = t.Key, pets = t.Select(p => p.petname).ToList() }).ToList();
+            
             return View(resFilteredOwnerPetDetails);
         }       
     }

@@ -15,7 +15,9 @@ namespace PetsWebService.Common.Tests
         {
             ServiceHelper objServiceHelper = new ServiceHelper();
 
-            List<People> result = await objServiceHelper.GetownersPetList("");
+            List<People> result = new List<People>();
+                
+            result = await objServiceHelper.GetownersPetList("");
 
             Assert.AreEqual(result.Count, 0);           
         }
@@ -25,9 +27,11 @@ namespace PetsWebService.Common.Tests
         {
             ServiceHelper objServiceHelper = new ServiceHelper();
 
-            List<People> result = await objServiceHelper.GetownersPetList("http://agl-developer-test.azurewebsites.net/people.json");
+            List<People> result = new List<People>();
 
-            Assert.AreNotEqual(result.Count, 0);            
+            result = await objServiceHelper.GetownersPetList("http://agl-developer-test.azurewebsites.net/people.json");
+            
+            Assert.AreNotEqual(result?.Count, 0);            
         }
     }
 }

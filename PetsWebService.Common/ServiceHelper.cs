@@ -23,6 +23,7 @@ namespace PetsWebService.Common
             {
                 new JsonMediaTypeFormatter()
             };
+
             HttpClient client = new HttpClient();
 
             try
@@ -30,7 +31,10 @@ namespace PetsWebService.Common
                 HttpResponseMessage res = await client.GetAsync(url);
                 if (res.IsSuccessStatusCode)
                 {
-                    objPetOwnerList = await res.Content.ReadAsAsync<List<People>>(formatters);
+                    List<People> response = await res.Content.ReadAsAsync<List<People>>(formatters);
+
+                    if (response != null)
+                        objPetOwnerList = response;
                 }
             }
             catch(Exception ex)

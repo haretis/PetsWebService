@@ -7,7 +7,7 @@ namespace PetsWebService.Common.Model
 {
     public class Pet
     {
-        public string name { get; set; }
-        public string type { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
     }
 }
