@@ -1,4 +1,4 @@
-﻿@using PetsWebService.ViewModel;
+﻿@using PetsWebService.Common.Model;
 
 @model List<PetDetails>
 @{
@@ -11,9 +11,9 @@
         {
             <tr>
                 <td>
-                    <b>  @element.gender.ToUpper() </b>
+                    <b>  @element.Gender.ToUpper() </b>
                     <table>
-                        @foreach (var petname in @element.pets)
+                        @foreach (var petname in @element.Pets)
                         {
                             <tr>
                                 <td colspan="5"></td>

@@ -19,7 +19,7 @@ namespace PetsWebService.Tests.Controllers
         [TestMethod]
         public void Index()
         {
-            var mockServiceHelper = new Mock<IServiceHelper>(MockBehavior.Strict);
+            var mockServiceHelper = new Mock<IPetsService>(MockBehavior.Strict);
             var unity = new UnityContainer();
             unity.RegisterInstance(mockServiceHelper.Object);
 

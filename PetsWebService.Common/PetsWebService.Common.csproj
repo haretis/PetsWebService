@@ -58,8 +58,9 @@
   <ItemGroup>
     <Compile Include="Model\People.cs" />
     <Compile Include="Model\Pet.cs" />
-    <Compile Include="IServiceHelper.cs" />
-    <Compile Include="ServiceHelper.cs" />
+    <Compile Include="IPetsService.cs" />
+    <Compile Include="Model\PetDetails.cs" />
+    <Compile Include="PetsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
